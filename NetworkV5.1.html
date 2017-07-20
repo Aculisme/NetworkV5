@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html> 
+ <head>
+    <title>Processing.JS inside Webpages: Template</title> 
+    <style type="text/css">
+    </style>
+</head>
+ <body>
+    <h1>This is a website illustrating social structures in CDN grade 10 (graduating 2020)</h1>
+    <p align="center"> 
+    <!--This draws the Canvas on the webpage -->
+      <canvas id="mycanvas"></canvas> 
+    </p>
+ </body> 
+
+
+ <!-- Run all the JavaScript stuff -->
+ <!-- Include the processing.js library -->
+ <!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+ <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+ 
+ <script>
+    var CanvasWidth = 1200;
+    var CanvasHeight = 900;
+    var sketchProc = function(processingInstance) {
+     with (processingInstance) {
+        size(CanvasWidth, CanvasHeight); 
+        frameRate(100);
+        
+    // ProgramCodeStartsHere 
+
+    var colorS = false;
+    var square = [
+        {xc:300, yc:300},
+        {xc:300, yc:600},
+        {xc:300, yc:900},
+        {xc:600, yc:300},
+        {xc:600, yc:600},
+        {xc:600, yc:900},
+        {xc:900, yc:300},
+        {xc:900, yc:600},
+        {xc:900, yc:900},
+        {xc:1200,yc:300},
+        {xc:1200,yc:600},
+        {xc:1200,yc:900}
+    ];  
+
+    var group = [
+        
+        superBlonde = [
+            ChloeG =    {xc:random(square[0].xc-300,square[0].xc),yc:random(square[0].yc-300,square[0].yc),n:'ChloeG'},
+            Tatiana =   {xc:random(square[0].xc-300,square[0].xc),yc:random(square[0].yc-300,square[0].yc),n:'Tatiana'},
+            Adela =     {xc:random(square[0].xc-300,square[0].xc),yc:random(square[0].yc-300,square[0].yc),n:'Adela'},
+            Anusha =    {xc:random(square[0].xc-300,square[0].xc),yc:random(square[0].yc-300,square[0].yc),n:'Anusha'},
+            SophieG =   {xc:random(square[0].xc-300,square[0].xc),yc:random(square[0].yc-300,square[0].yc),n:'SophieG'}
+            ],
+        
+        blonde = [
+            Catherine = {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Catherine'}, 
+            Natascha =  {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Natascha'}, 
+            Claire =    {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Claire'}, 
+            Madeleine = {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Madeleine'}, 
+            Shani =     {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Shani'}, 
+            ChloeD =    {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'ChloeD'}, 
+            Charlotte = {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Charlotte'}, 
+            Lucy =      {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Lucy'}, 
+            Donisha =   {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Donisha'}, 
+            Savi =      {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Savi'}, 
+            Virginia =  {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Virginia'}, 
+            SophieT =   {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'SophieT'}, 
+            Paulette =  {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Paulette'}, 
+            Gessie =    {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Gessie'}, 
+//          Caitlyn =   {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Caitlyn'}, 
+            Livia =     {xc:random(square[1].xc-300,square[1].xc),yc:random(square[1].yc-300,square[1].yc),n:'Livia'} 
+            ],
+        
+        nonBlonde = [
+            Josephine = {xc:random(square[2].xc-300,square[2].xc),yc:random(square[2].yc-300,square[2].yc),n:'Josephine'}, 
+            Arine =     {xc:random(square[2].xc-300,square[2].xc),yc:random(square[2].yc-300,square[2].yc),n:'Arine'},
+            Martina =   {xc:random(square[2].xc-300,square[2].xc),yc:random(square[2].yc-300,square[2].yc),n:'Martina'}
+            ],
+        
+        cannabis = [
+            AlessandroC={xc:random(square[3].xc-300,square[3].xc),yc:random(square[3].yc-300,square[3].yc),n:'AlessandroC'},
+            AlessandroB={xc:random(square[3].xc-300,square[3].xc),yc:random(square[3].yc-300,square[3].yc),n:'AlessandroB'},
+            Ian =       {xc:random(square[3].xc-300,square[3].xc),yc:random(square[3].yc-300,square[3].yc),n:'Ian'},
+            DylanC =    {xc:random(square[3].xc-300,square[3].xc),yc:random(square[3].yc-300,square[3].yc),n:'DylanC'},
+            ThomasC =   {xc:random(square[3].xc-300,square[3].xc),yc:random(square[3].yc-300,square[3].yc),n:'ThomasC'},
+            Alexander = {xc:random(square[3].xc-300,square[3].xc),yc:random(square[3].yc-300,square[3].yc),n:'Alexander'}
+            ],
+        
+        football = [
+            Aabis =     {xc:random(square[4].xc-300,square[4].xc),yc:random(square[4].yc-300,square[4].yc),n:'Aabis'},
+            Donald =    {xc:random(square[4].xc-300,square[4].xc),yc:random(square[4].yc-300,square[4].yc),n:'Donald'},
+            Matthew =   {xc:random(square[4].xc-300,square[4].xc),yc:random(square[4].yc-300,square[4].yc),n:'Matthew'},
+            Darryl =    {xc:random(square[4].xc-300,square[4].xc),yc:random(square[4].yc-300,square[4].yc),n:'Darryl'},
+            Mubarak =   {xc:random(square[4].xc-300,square[4].xc),yc:random(square[4].yc-300,square[4].yc),n:'Mubarak'},
+            Finn =      {xc:random(square[4].xc-300,square[4].xc),yc:random(square[4].yc-300,square[4].yc),n:'Finn'},
+            Nousche =   {xc:random(square[4].xc-300,square[4].xc),yc:random(square[4].yc-300,square[4].yc),n:'Nousche'}
+            ],
+        
+        basketball = [
+            Harrison =  {xc:random(square[5].xc-300,square[5].xc),yc:random(square[5].yc-300,square[5].yc),n:'Harrison'},
+            DylanB =    {xc:random(square[5].xc-300,square[5].xc),yc:random(square[5].yc-300,square[5].yc),n:'DylanB'},
+            Miguel =    {xc:random(square[5].xc-300,square[5].xc),yc:random(square[5].yc-300,square[5].yc),n:'Miguel'},
+            Jialong =   {xc:random(square[5].xc-300,square[5].xc),yc:random(square[5].yc-300,square[5].yc),n:'Jialong'},
+            Eric =      {xc:random(square[5].xc-300,square[5].xc),yc:random(square[5].yc-300,square[5].yc),n:'Eric'}
+            ],
+        
+        indasian = [
+            Dhitee =    {xc:random(square[6].xc-300,square[6].xc),yc:random(square[6].yc-300,square[6].yc),n:'Dhitee'},
+            Risa =      {xc:random(square[6].xc-300,square[6].xc),yc:random(square[6].yc-300,square[6].yc),n:'Risa'},
+            Karin =     {xc:random(square[6].xc-300,square[6].xc),yc:random(square[6].yc-300,square[6].yc),n:'Karin'},
+            Aude =      {xc:random(square[6].xc-300,square[6].xc),yc:random(square[6].yc-300,square[6].yc),n:'Aude'},
+            Vita =      {xc:random(square[6].xc-300,square[6].xc),yc:random(square[6].yc-300,square[6].yc),n:'Vita'}
+            ],
+        
+        memes = [
+            Shun =      {xc:random(square[7].xc-300,square[7].xc),yc:random(square[7].yc-300,square[7].yc),n:'Shun'},
+            Anurag =    {xc:random(square[7].xc-300,square[7].xc),yc:random(square[7].yc-300,square[7].yc),n:'Anurag'},
+            Faiz =      {xc:random(square[7].xc-300,square[7].xc),yc:random(square[7].yc-300,square[7].yc),n:'Faiz'},
+            Ahnaf =     {xc:random(square[7].xc-300,square[7].xc),yc:random(square[7].yc-300,square[7].yc),n:'Ahnaf'},
+            Raya =      {xc:random(square[7].xc-300,square[7].xc),yc:random(square[7].yc-300,square[7].yc),n:'Raya'},
+            Sebastien = {xc:random(square[7].xc-300,square[7].xc),yc:random(square[7].yc-300,square[7].yc),n:'Sebastien'},
+            Luca =      {xc:random(square[7].xc-300,square[7].xc),yc:random(square[7].yc-300,square[7].yc),n:'Luca'},
+            ThomasK =   {xc:random(square[7].xc-300,square[7].xc),yc:random(square[7].yc-300,square[7].yc),n:'ThomasK'}
+            ],
+        
+        chill = [
+            Naoki =     {xc:random(square[8].xc-300,square[8].xc),yc:random(square[8].yc-300,square[8].yc),n:'Naoki'},
+            Rioma =     {xc:random(square[8].xc-300,square[8].xc),yc:random(square[8].yc-300,square[8].yc),n:'Rioma'},
+            Toby =      {xc:random(square[8].xc-300,square[8].xc),yc:random(square[8].yc-300,square[8].yc),n:'Toby'},
+            Metin =     {xc:random(square[8].xc-300,square[8].xc),yc:random(square[8].yc-300,square[8].yc),n:'Metin'}
+            ],
+        
+        silent = [
+            Nouf =      {xc:random(square[9].xc-300,square[9].xc),yc:random(square[9].yc-300,square[9].yc),n:'Nouf'},
+            Katla =     {xc:random(square[9].xc-300,square[9].xc),yc:random(square[9].yc-300,square[9].yc),n:'Katla'},
+            Aline =     {xc:random(square[9].xc-300,square[9].xc),yc:random(square[9].yc-300,square[9].yc),n:'Aline'},
+            Arieze =    {xc:random(square[9].xc-300,square[9].xc),yc:random(square[9].yc-300,square[9].yc),n:'Arieze'},
+            Dasha =     {xc:random(square[9].xc-300,square[9].xc),yc:random(square[9].yc-300,square[9].yc),n:'Dasha'}
+            ]
+    ];
+        
+    var sp = 20;
+    strokeWeight(1);
+    stroke(90,90,90);
+    background(60, 60, 60);
+
+    for (var h = 0; h < (1200/sp)-1; h++) {
+        for (var v = 0; v < (900/sp)-1; v++) {
+        line(h*sp+sp,0,h*sp+sp,900);
+        line(0,v*sp+sp,1200,v*sp+sp);
+        }
+    }
+    textSize(14);    
+    for (var a = 0; a <group.length; a++){
+        for (var b = 0; b <group[a].length; b++){
+            strokeWeight(2.2);
+            if(colorS === true){stroke(0,0,0);}
+                    else{
+                        if(a===0){stroke(255, 0,   0);}
+                        if(a===1){stroke(255, 0, 230);}
+                        if(a===2){stroke(153, 0, 255);}
+                        if(a===3){stroke(0, 9,   255);}
+                        if(a===4){stroke(0, 191, 255);}
+                        if(a===5){stroke(0, 255, 196);}
+                        if(a===6){stroke(0, 255,  60);}
+                        if(a===7){stroke(166, 255, 0);}
+                        if(a===8){stroke(242, 255, 0);}
+                        if(a===9){stroke(255, 217, 0);}
+                    }
+            for (var c = 0; c <group[a].length; c++){
+            line(group[a][b].xc,group[a][b].yc,group[a][c].xc,group[a][c].yc);
+            }
+        }
+    }
+    for (var e = 0; e <group.length; e++){
+        for (var f = 0; f <group[e].length; f++){
+            if(colorS === true){stroke(0,0,0);}
+            text(group[e][f].n,group[e][f].xc,group[e][f].yc);
+        }
+    }
+    fill(200,200,200);
+    text('Property of Luca Mehl',CanvasWidth-137,CanvasHeight-16);
+    text('Jul 20 2017',CanvasWidth-73,CanvasHeight-3);
+    
+    //ProgramCodeEndsHere
+    }
+};
+
+    // Get the canvas that Processing-js will use
+    var canvas = document.getElementById("mycanvas"); 
+    // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    var processingInstance = new Processing(canvas, sketchProc); 
+ </script>
+
+</html>
